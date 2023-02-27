@@ -262,6 +262,7 @@
                                                     required>
                                                     <option value="{{ $item->n_sucursal_pertenece }}" selected>
                                                         {{ $item->n_sucursal_pertenece }}</option>
+                                                    <option>-- Sin asignar --</option>
                                                     @foreach ($lista_sucursal as $item2)
                                                         <option value="{{ $item2->n_sucursal }}">
                                                             {{ $item2->n_sucursal }}
