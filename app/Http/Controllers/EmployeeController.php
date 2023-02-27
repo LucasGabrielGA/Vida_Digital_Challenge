@@ -49,6 +49,7 @@ class EmployeeController extends Controller
                 $request->txtCorreo
             ]);
         } catch (\Throwable $th) {
+            $sql = 0;
         }
         if ($sql == true) {
             return back()->with("exito", "Se ha registrado el empleado correctamente.");
