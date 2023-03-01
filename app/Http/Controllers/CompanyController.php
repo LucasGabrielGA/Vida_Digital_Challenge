@@ -63,7 +63,7 @@ class CompanyController extends Controller
             return back()->with("fallo", "Ha ocurrido un error y no se pudo actualizar la empresa.");
         }
     }
-
+    
     /* Función delete que elimina la empresa elegida y actualiza mi base de datos.
     Luego retorna a la página hacia atrás y muestra un mensaje.*/
     public function deleteEmpresa($cuit)
