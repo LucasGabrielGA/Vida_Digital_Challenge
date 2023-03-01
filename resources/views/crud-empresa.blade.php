@@ -100,7 +100,7 @@
                             </div>
                             <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label">Correo</label>
-                                <input type="text" class="form-control" id="exampleInputEmail1"
+                                <input type="email" class="form-control" id="exampleInputEmail1"
                                     aria-describedby="emailHelp" maxlength="50" name="txtCorreo" required>
                                 <div class="valid-feedback">
                                     ¡Dato aceptable!

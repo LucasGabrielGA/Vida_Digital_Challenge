@@ -13,7 +13,7 @@
     <script src="js/updateValidation.js"></script>
 
     <link rel="icon" href="images/vida_digital_logo.png">
-    
+
     <title>Crud Empleados</title>
 </head>
 
@@ -124,7 +124,7 @@
                             <div class="modal-footer">
                                 <input type="reset" class="btn btn-secondary" data-bs-dismiss="modal"
                                     value="Cerrar">
-                                <button type="submit" onclick="validateData()"
+                                <button type="submit" onclick="createValidateData()"
                                     class="btn btn-primary">Registrar</button>
                             </div>
                         </form>
@@ -262,6 +262,7 @@
                                                     required>
                                                     <option value="{{ $item->n_sucursal_pertenece }}" selected>
                                                         {{ $item->n_sucursal_pertenece }}</option>
+                                                    <option>-- Sin asignar --</option>
                                                     @foreach ($lista_sucursal as $item2)
                                                         <option value="{{ $item2->n_sucursal }}">
                                                             {{ $item2->n_sucursal }}

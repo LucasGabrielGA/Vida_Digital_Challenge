@@ -13,7 +13,7 @@ class CompanyController extends Controller
     y abre la vista de que contiene el CRUD*/
     public function readEmpresa()
     {
-        $datos = DB::select("select * from Empresa");
+        $datos = DB::select("select * from empresa");
         return view("crud-empresa")->with("datos", $datos);
     }
 
@@ -64,6 +64,8 @@ class CompanyController extends Controller
         }
     }
 
+    /* Función delete que elimina la empresa elegida y actualiza mi base de datos.
+    Luego retorna a la página hacia atrás y muestra un mensaje.*/
     public function deleteEmpresa($cuit)
     {
         try {
