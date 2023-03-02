@@ -121,7 +121,8 @@
                 {{-- Este foreach me trae los datos de Sucursal --}}
                 @foreach ($datos as $item)
                     <tr style="background-color: beige">
-                        <th>{{ $item->empresa }}</th>
+                        {{-- Hace referencia a la tabla empresa --}}
+                        <th>{{ $item->empresa->nombre }}</th>
                         <td>{{ $item->n_sucursal }}</td>
                         <td>{{ $item->direccion }}</td>
                         <td>{{ $item->nombre }}</td>
@@ -163,7 +164,7 @@
                                                     Dueña</label>
                                                 <input type="text" class="form-control" id="exampleInputEmail1"
                                                     aria-describedby="emailHelp" maxlength="11"
-                                                    name="txtCuit_Empresa" value="{{ $item->empresa }}" readonly>
+                                                    name="txtCuit_Empresa" value="{{ $item->empresa->cuit.' - '.$item->empresa->nombre}}" readonly>
                                             </div>
                                             <div class="mb-3">
                                                 <label for="exampleInputEmail1" class="form-label">N° de

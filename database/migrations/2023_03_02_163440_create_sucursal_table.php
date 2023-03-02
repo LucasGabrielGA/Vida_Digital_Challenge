@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSucursalTable extends Migration
+return new class extends Migration
 {
     /**
      * Run the migrations.
@@ -14,7 +14,7 @@ class CreateSucursalTable extends Migration
     public function up()
     {
         Schema::create('sucursal', function (Blueprint $table) {
-            $table->integer('n_sucursal')->primary();
+            $table->increments('n_sucursal');
             $table->string('cuit_empresa', 11);
             $table->string('direccion', 50);
             $table->string('nombre', 20);
@@ -32,4 +32,4 @@ class CreateSucursalTable extends Migration
     {
         Schema::dropIfExists('sucursal');
     }
-}
+};

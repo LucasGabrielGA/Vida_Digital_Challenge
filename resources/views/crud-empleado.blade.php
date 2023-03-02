@@ -185,7 +185,7 @@
                         <td>{{ $item->dni }}</td>
                         <td>{{ $item->nombre }}</td>
                         <td>{{ $item->apellido }}</td>
-                        <td>{{ $item->empresa }}</td>
+                        <td>{{ $item->empresa->nombre }}</td>
                         <td>{{ $item->n_sucursal_pertenece }}</td>
                         <td>{{ $item->direccion }}</td>
                         <td>{{ $item->correo }}</td>

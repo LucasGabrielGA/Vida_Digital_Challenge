@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -40,7 +41,28 @@ class LoginController extends Controller
 
     /* Función registerUser para el registro del usuario */
     public function registerUser(Request $request){
-        $password = $request->txtPassword;
+        $op = true;
+        try {
+            $password = $request->txtPassword;
+            $password = Hash::make($password);          //Se crea la contraseña del usuario encriptada
+    
+            $usuario = new User();
+            $usuario->name = $request->txtNombre;
+            $usuario->email = $request->txtEmail;
+            $usuario->password = $password;
+            $usuario->save();
+        } catch (\Throwable $th) {
+            $op = true;
+        }
+        if ($op == true) {
+            return redirect('/')->with("exito", "Se ha registrado como Usuario correctamente.");
+        } else {
+            return redirect('/')->with("fallo", "Ha ocurrido un error y no se pudo registrar.");
+        }
+
+        //Misma función pero con la consulta SQL
+        
+        /*$password = $request->txtPassword;
         $password = Hash::make($password);          //Se crea la contraseña del usuario encriptada
         $email = $request->txtEmail;
         $nombre = $request->txtNombre;
@@ -54,6 +76,6 @@ class LoginController extends Controller
             return redirect('/')->with("exito", "Se ha registrado como Usuario correctamente.");
         } else {
             return redirect('/')->with("fallo", "Ha ocurrido un error y no se pudo registrar.");
-        }
+        }*/
     }
 }
